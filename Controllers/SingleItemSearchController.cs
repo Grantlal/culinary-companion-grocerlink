@@ -9,7 +9,7 @@ namespace GrocerLink.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class GrocerLinkController : ControllerBase
+    public class SingleItemSearchController : ControllerBase
     {
         [HttpGet]
         public string Get(string keyword)
@@ -23,7 +23,7 @@ namespace GrocerLink.Controllers
             }
             catch
             {
-                return "Failed";
+                return "No";
             }
         }
     }
