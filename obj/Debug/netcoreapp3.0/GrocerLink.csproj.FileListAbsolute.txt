@@ -10,9 +10,16 @@ G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\bin\Debug\netcoreapp3.0\Grocer
 G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.csprojAssemblyReference.cache
 G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\staticwebassets\GrocerLink.StaticWebAssets.Manifest.cache
 G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\staticwebassets\GrocerLink.StaticWebAssets.xml
-G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.MvcApplicationPartsAssemblyInfo.cache
 G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.AssemblyInfoInputs.cache
 G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.AssemblyInfo.cs
 G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.RazorTargetAssemblyInfo.cache
 G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.dll
 G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.pdb
+G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\bin\Debug\netcoreapp3.0\DnsClient.dll
+G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\bin\Debug\netcoreapp3.0\MongoDB.Bson.dll
+G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\bin\Debug\netcoreapp3.0\MongoDB.Driver.dll
+G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\bin\Debug\netcoreapp3.0\MongoDB.Driver.Core.dll
+G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\bin\Debug\netcoreapp3.0\MongoDB.Libmongocrypt.dll
+G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\bin\Debug\netcoreapp3.0\SharpCompress.dll
+G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.MvcApplicationPartsAssemblyInfo.cache
+G:\SeniorProject\GrocerLink\GrocerLink\GrocerLink\obj\Debug\netcoreapp3.0\GrocerLink.csproj.CopyComplete

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GrocerLink.LookupIngredients;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -16,10 +17,12 @@ namespace GrocerLink.Controllers
         {
             try
             {
-                var amazonUrl = "https://www.amazon.com/s?k=";
-                var targetUrl = "https://www.target.com/s?searchTerm=";
-                return amazonUrl + keyword;
-                //return "Successful connect to Grocer Link";
+                var ingredients = new List<string>();
+                ingredients.Add(keyword);
+
+                var ingredientSearch = new LookupIngredient();
+                var cartResponse = ingredientSearch.lookUp(ingredients);
+                return cartResponse;
             }
             catch
             {
