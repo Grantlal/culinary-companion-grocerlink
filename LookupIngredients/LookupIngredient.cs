@@ -21,10 +21,19 @@ namespace GrocerLink.LookupIngredients
             var CCDatabase = dbClient.GetDatabase(databaseName);
             var asinCollection = CCDatabase.GetCollection<BsonDocument>(collectionName);
 
-            var firstDocument = asinCollection.Find(new BsonDocument()).FirstOrDefault();
-            Console.WriteLine(firstDocument.ToString());
+            var ingredientFilter = Builders<BsonDocument>.Filter.ElemMatch<BsonValue>(
+                "Ingredients", new BsonDocument { { "Ingredient", ingredients.FirstOrDefault() } });
+            //var firstDocument = asinCollection.Find(ingredientFilter).ToList().FirstOrDefault();
+            var secondDocument = asinCollection.Find(new BsonDocument()).ToList();
+            //var results = firstDocument.Any<BsonDocument>(x => x.Ingredient == "Chicken Breast");
 
-            return firstDocument.ToString();
+            //Console.WriteLine(firstDocument.ToString());
+            var endString = "";
+            foreach (var instance in secondDocument)
+            {
+                endString += instance.ToString();
+            }
+            return endString;
         }
 
     }

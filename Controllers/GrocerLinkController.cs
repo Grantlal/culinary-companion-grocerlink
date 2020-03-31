@@ -24,9 +24,9 @@ namespace GrocerLink.Controllers
                 var cartResponse = ingredientSearch.lookUp(ingredients);
                 return cartResponse;
             }
-            catch
+            catch(Exception e)
             {
-                return "Failed";
+                return e.ToString();
             }
         }
     }
