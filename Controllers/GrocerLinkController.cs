@@ -21,7 +21,7 @@ namespace GrocerLink.Controllers
                 ingredients.Add(keyword);
 
                 var ingredientSearch = new LookupIngredient();
-                var cartResponse = ingredientSearch.lookUp(ingredients);
+                var cartResponse = ingredientSearch.lookUp(keyword);
                 return cartResponse;
             }
             catch(Exception e)

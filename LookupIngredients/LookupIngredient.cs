@@ -15,19 +15,17 @@ namespace GrocerLink.LookupIngredients
         private readonly string databaseName = "CulinaryCompanion";
         private readonly string collectionName = "IngredientASIN";
 
-        public string lookUp(List<string> ingredients)
+        public string lookUp(string ingredients)
         {
             MongoClient dbClient = new MongoClient(connectionString);
             var CCDatabase = dbClient.GetDatabase(databaseName);
             var asinCollection = CCDatabase.GetCollection<BsonDocument>(collectionName);
 
             var ingredientFilter = Builders<BsonDocument>.Filter.ElemMatch<BsonValue>(
-                "Ingredients", new BsonDocument { { "Ingredient", ingredients.FirstOrDefault() } });
-            //var firstDocument = asinCollection.Find(ingredientFilter).ToList().FirstOrDefault();
-            var secondDocument = asinCollection.Find(new BsonDocument()).ToList();
-            //var results = firstDocument.Any<BsonDocument>(x => x.Ingredient == "Chicken Breast");
+                "Ingredients", new BsonDocument { { "Ingredient", ingredients } });
+            var filter = Builders<BsonDocument>.Filter.Eq("Ingredient", ingredients.ToLower());
 
-            //Console.WriteLine(firstDocument.ToString());
+            var secondDocument = asinCollection.Find(filter).FirstOrDefault().ToString();
             var endString = "";
             foreach (var instance in secondDocument)
             {
