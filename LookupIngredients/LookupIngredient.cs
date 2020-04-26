@@ -21,8 +21,8 @@ namespace GrocerLink.LookupIngredients
             var CCDatabase = dbClient.GetDatabase(databaseName);
             var asinCollection = CCDatabase.GetCollection<BsonDocument>(collectionName);
 
-            var ingredientFilter = Builders<BsonDocument>.Filter.ElemMatch<BsonValue>(
-                "Ingredients", new BsonDocument { { "Ingredient", ingredients } });
+            /*var ingredientFilter = Builders<BsonDocument>.Filter.ElemMatch<BsonValue>(
+                "Ingredients", new BsonDocument { { "Ingredient", ingredients } });*/
             var filter = Builders<BsonDocument>.Filter.Eq("Ingredient", ingredients.ToLower());
 
             var secondDocument = asinCollection.Find(filter).FirstOrDefault().ToString();
@@ -31,7 +31,8 @@ namespace GrocerLink.LookupIngredients
             {
                 endString += instance.ToString();
             }
-            return endString;
+            var finalString = endString.Substring(58, 10);
+            return finalString;
         }
 
     }
