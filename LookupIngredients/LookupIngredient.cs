@@ -24,16 +24,47 @@ namespace GrocerLink.LookupIngredients
             /*var ingredientFilter = Builders<BsonDocument>.Filter.ElemMatch<BsonValue>(
                 "Ingredients", new BsonDocument { { "Ingredient", ingredients } });*/
             var filter = Builders<BsonDocument>.Filter.Eq("Ingredient", ingredients.ToLower());
-
-            var secondDocument = asinCollection.Find(filter).FirstOrDefault().ToString();
-            var endString = "";
-            foreach (var instance in secondDocument)
+            try
             {
-                endString += instance.ToString();
+                var secondDocument = asinCollection.Find(filter).FirstOrDefault().ToString();
+
+                var endString = "";
+                foreach (var instance in secondDocument)
+                {
+                    endString += instance.ToString();
+                }
+                var finalString = endString.Substring(58, 10);
+                return finalString;
+            } 
+            catch (Exception e)
+            {
+                return null;
             }
-            var finalString = endString.Substring(58, 10);
-            return finalString;
         }
 
+        public string lookUpFullDocument(string ingredients)
+        {
+            MongoClient dbClient = new MongoClient(connectionString);
+            var CCDatabase = dbClient.GetDatabase(databaseName);
+            var asinCollection = CCDatabase.GetCollection<BsonDocument>(collectionName);
+
+            /*var ingredientFilter = Builders<BsonDocument>.Filter.ElemMatch<BsonValue>(
+                "Ingredients", new BsonDocument { { "Ingredient", ingredients } });*/
+            var filter = Builders<BsonDocument>.Filter.Eq("Ingredient", ingredients.ToLower());
+            try
+            {
+                var secondDocument = asinCollection.Find(filter).FirstOrDefault().ToString();
+                var endString = "";
+                foreach (var instance in secondDocument)
+                {
+                    endString += instance.ToString();
+                }
+                return endString;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }
